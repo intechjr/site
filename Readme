@@ -1,0 +1,89 @@
+# ACAM Web
+
+Este repositório contém um site estático desenvolvido com **HTML, SASS (CSS) e JavaScript**. O projeto usa **Node.js** para gerenciar dependências e compilar os estilos.
+
+## ✨ Tecnologias Utilizadas
+- **HTML** - Estrutura do site.
+- **SASS (CSS)** - Estilização com variáveis e mixins.
+- **Node.js + npm** - Gerenciamento de dependências.
+- **PostCSS + Autoprefixer** - Compatibilidade com diferentes navegadores.
+
+---
+
+## 🔄 Como Rodar o Projeto
+
+### 1. **Instalar o Node.js**
+Certifique-se de que o Node.js está instalado. Caso não tenha, baixe e instale a partir do site oficial:
+- [Node.js Download](https://nodejs.org/)
+
+Verifique a instalação:
+```sh
+node -v  # Versão do Node.js
+npm -v   # Versão do npm
+```
+
+### 2. **Clonar o Repositório**
+```sh
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+```
+
+### 3. **Instalar Dependências**
+```sh
+npm install  # ou pnpm install
+```
+
+### 4. **Compilar o CSS (SASS)**
+```sh
+npm run compile:sass
+```
+
+### 5. **Observar Mudanças no SASS** *(opcional)*
+Caso esteja editando os estilos e queira compilar automaticamente:
+```sh
+npm run watch:sass
+```
+
+### 6. **Rodar um Servidor Local** *(opcional, mas recomendado)*
+Se quiser visualizar o site localmente:
+- Com **Python**:
+  ```sh
+  python -m http.server 8000
+  ```
+  Acesse: `http://localhost:8000`
+
+- Com **http-server** (Node.js):
+  ```sh
+  npx http-server
+  ```
+  Acesse: `http://localhost:8080`
+
+---
+
+## 🚀 Solução de Problemas
+
+### 1. **Aviso de @import descontinuado no SASS**
+Se ao compilar o SASS você receber mensagens como:
+```
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+```
+Siga estes passos:
+- Substitua `@import` por `@use` e `@forward` nos arquivos `.scss`.
+- Verifique o README atualizado com mais detalhes.
+
+### 2. **Erro de porta ocupada ao rodar servidor**
+Se o servidor não iniciar por causa de uma porta ocupada, tente:
+```sh
+npx http-server -p 3000
+```
+E acesse `http://localhost:3000`.
+
+---
+
+## 📜 Licença
+Este projeto está sob licença.
+
+---
+
+Se precisar de ajuda, abra uma *issue* ou entre em contato! ✨
+
