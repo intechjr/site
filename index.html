@@ -7,16 +7,33 @@
     <meta name="author" content="Otávio A. Barbiéri">
     <meta name="description" content="Empresa Júnior do IFSULDEMINAS Muzambinho">
     <meta name="keywords" content="empresa júnior, IFSULDEMINAS, Muzambinho, desenvolvimento, software, ACAM Jr., Instituto Federal de Educação, Ciência e Tecnologia do Sul de Minas Gerais - Campus Muzambinho, web, sites, Aztech Júnior">
-    <title>ACAM Jr</title>
+    <title>Intech Jr.</title>
 
     <link rel="stylesheet" href="assets/css/style.css" >
+    <link rel="icon" href="assets/images/Logo.png" type="image/x-icon">
+    <style>
+        .img_logo {
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .section_title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact_desc {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <header class="header">
             <div class="logo">
-                <img src="assets/images/Logo_resdes_sociais.png" alt="ACAM Jr Logo">
+                <img src="assets/images/Logo.png" alt="ACAM Jr Logo" class="img_logo">
             </div>
             <nav class="navigation">
                 <ul class="navigation__list">
@@ -30,15 +47,7 @@
                     </li>
 
                     <li class="navigation__item">
-                        <a href="">Time</a>
-                    </li>
-
-                    <li class="navigation__item">
-                        <a href="">Sobre</a>
-                    </li>
-
-                    <li>
-                        <a href="" tabindex="-1">
+                        <a href="#contact" tabindex="-1">
                             <button class="btn--cta">
                                 Contato
                             </button>
@@ -53,20 +62,18 @@
             <section class="hero">
                 <div class="hero__content">
                         <div class="hero__header">
-                            <h1>ACAM Jr</h1>
+                            <h1>Intech Jr.</h1>
                             <p>
                                 A Empresa Júnior é uma associação civil sem fins lucrativos, formada e gerida por estudantes do curso de Ciência da Computação do IFSULDEMINAS Campus Muzambinho, que visa levar soluções de tecnologia da informação para o mercado de trabalho, por meio da aplicação prática do conhecimento adquirido ao longo do curso.
                             </p>
                         </div>
         
                         <div class="hero__footer">
-                            <button class="btn--cta">
-                                Contato
-                            </button>
-            
-                            <button class="btn--secondary">
-                                Saiba mais
-                            </button>
+                            <a href="#contact" tabindex="-1">
+                                <button class="btn--cta">
+                                    Contato
+                                </button>
+                            </a>
                         </div>
                 </div>
     
@@ -75,7 +82,7 @@
     
             <section class="services" id="services">
     
-                <h2>Nossos Serviços</h2>
+                <h2 class="section_title">Nossos Serviços</h2>
     
                 <div class="services__grid">
     
@@ -120,7 +127,7 @@
 
             <section id="portfolio" class="portfolio">
 
-                <h2>Portfolio</h2>
+                <h2 class="section_title">Portfolio</h2>
 
                 <div class="portfolio__container">
 
@@ -187,13 +194,13 @@
             </section>
 
             <section id="contact" class="contact">
-                <h2>Contato</h2>
+                <h2 class="section_title">Contato</h2>
 
-                <p>Entre em contato e realize sua ideia.</p>
+                <p class="contact_desc">Entre em contato e realize sua ideia.</p>
 
                 <div class="contact__content">
 
-                    <form class="contact__form">
+                    <form class="contact__form" action="assets/scripts/send_email.php" method="POST">
                         <label for="contact-name">
                             Nome
                             <input 
