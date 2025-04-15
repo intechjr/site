@@ -55,7 +55,7 @@
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <img src="{% static 'images/web.jpg' %}" class="img-fluid rounded mb-3" alt="Desenvolvimento Web">
+                            <img src="{% static 'images/web.jpg' %}" class="img-fluid rounded mb-3" alt="Desenvolvimento Web" style="height: 200px; object-fit: cover;">
                             <h5 class="card-title">Desenvolvimento Web</h5>
                             <p class="card-text">Criamos sites modernos, responsivos e otimizados.</p>
                         </div>
@@ -64,7 +64,7 @@
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <img src="{% static 'images/design.jpg' %}" class="img-fluid rounded mb-3" alt="Desenvolvimento Web">
+                            <img src="{% static 'images/design.jpg' %}" class="img-fluid rounded mb-3" alt="Design Gráfico" style="height: 200px; object-fit: cover;">
                             <h5 class="card-title">Design Gráfico</h5>
                             <p class="card-text">Identidade visual única e impactante para sua marca.</p>
                         </div>
@@ -73,7 +73,7 @@
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <img src="{% static 'images/mktdigital.png' %}" class="img-fluid rounded mb-3" alt="Desenvolvimento Web">
+                            <img src="{% static 'images/mktdigital.png' %}" class="img-fluid rounded mb-3" alt="Marketing Digital" style="height: 200px; object-fit: cover;">
                             <h5 class="card-title">Marketing Digital</h5>
                             <p class="card-text">Aumente sua presença online com estratégias eficazes.</p>
                         </div>
@@ -124,11 +124,23 @@
     <section id="contact" class="py-5">
         <div class="container text-center">
             <h2 class="mb-4">Entre em Contato</h2>
-            <form class="row justify-content-center">
+            
+            <!-- Mensagens de alerta -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
+            <form class="row justify-content-center" action="{% url 'contact' %}" method="POST">
+                {% csrf_token %}
                 <div class="col-md-6">
-                    <input type="text" class="form-control mb-3" placeholder="Seu nome">
-                    <input type="email" class="form-control mb-3" placeholder="Seu e-mail">
-                    <textarea class="form-control mb-3" rows="4" placeholder="Sua mensagem"></textarea>
+                    <input type="text" name="nome" class="form-control mb-3" placeholder="Seu nome" required>
+                    <input type="email" name="email" class="form-control mb-3" placeholder="Seu e-mail" required>
+                    <textarea name="mensagem" class="form-control mb-3" rows="4" placeholder="Sua mensagem" required></textarea>
                     <button type="submit" class="btn btn-primary w-100">Enviar</button>
                 </div>
             </form>
