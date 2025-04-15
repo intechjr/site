@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 4px;
+            margin: 8px;
+        }
+        .navbar a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        .content {
+            padding: 20px;
+            margin-top: 70px; 
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 70px; 
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: #3f3f3f;
+        }
+        .action-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .container{
+            padding: 20px;
+            margin: auto;
+            max-width: 1200px;
+            margin-top: 30px;
+        }
+        .info-container{
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'produto-create' %}">Criar Produto</a>
+        <a href="{% url 'produto-list' %}">Listar Produtos</a>
+        <a href="{% url 'produtos-por-setor' setor_id=1 %}">Produtos por Setor</a>
+        <a href="{% url 'produtos-por-subsetor' subsetor_id=1 %}">Produtos por Subsetor</a>
+        <a href="{% url 'produtos-por-tipo-embalagem' %}">Gerenciar por Embalagem</a>
+        <a href="{% url 'produtos-por-fabricante' %}">Gerenciar por Fabricante</a>
+        <a href="{% url 'produtos-por-transacao' %}">Gerenciar por Transação</a>
+        <a href="{% url 'marca-list' %}">Gerenciar por Marcas</a>
+        <a href="{% url 'transacoes-tipos' %}">Transações</a>
+        <a href="{% url 'user_subsetor' %}">Teste Usuário</a>
+    </div>
+
+    <div class="container">
+        <div class="info-container">
+            <h1>Informações do Usuário</h1>
+            <p><strong>Nome de usuário:</strong> {{ user.username }}</p>
+            <p><strong>Subsetor:</strong> {{ subsetor.nome_sub_setor }}</p>
+        </div>
+        <h1>Lista de Produtos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Produto</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in object_list %}
+                    <tr>
+                        <td>{{ produto.nome_produto }} - {{ produto.marca }}</td>
+                        <td class="action-links">
+                            <a href="{% url 'produto-detail' produto.pk %}">Ver Detalhes</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="action-links">
+            <a href="{% url 'produto-create' %}">Adicionar Novo Produto</a>
+            <br><br>
+            <a href="{% url 'home' %}">Voltar</a>
+        </div>
+    </div>
+</body>
+</html>
