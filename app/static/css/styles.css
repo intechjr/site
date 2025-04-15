@@ -100,3 +100,55 @@ body {
 .nav-link:hover {
     color: var(--primary-color) !important;
 }
+
+/* Estilos para os cards */
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 16px;
+    border: none;
+}
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.card-title {
+    font-weight: 700;
+    color: var(--btn-color);
+}
+
+.card-body i {
+    margin-bottom: 8px;
+}
+
+blockquote {
+    font-size: 1.1rem;
+    color: #444;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 16px;
+    margin: 0 0 1rem 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+footer.blockquote-footer {
+    color: #888;
+    font-size: 0.95em;
+}
+
+footer.bg-dark {
+    border-top: 4px solid var(--primary-color);
+}
+
+footer.bg-dark a:hover {
+    color: var(--primary-color) !important;
+    text-decoration: underline;
+}
+
+/* Botão flutuante do WhatsApp */
+.btn-success.rounded-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}

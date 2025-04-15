@@ -1,9 +1,17 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.views.generic import *
+from .models import *
 
 def home(request):
-    return render(request, 'home.html')
+    services = Service.objects.all()
+    portfolio_items = Portfolio.objects.all()
+    return render(request, 'base.html', {
+        'services': services,
+        'portfolio_items': portfolio_items
+    })
+
 
 def contact(request):
     if request.method == 'POST':
@@ -19,8 +27,8 @@ def contact(request):
             send_mail(
                 subject=f'Contato do site - {name}',
                 message=email_body,
-                from_email='aajracam@gmail.com',
-                recipient_list=['aajracam@gmail.com'],
+                from_email='intechjr@gmail.com',
+                recipient_list=['intechjr@gmail.com'],
                 fail_silently=False,
             )
             messages.success(request, 'Mensagem enviada com sucesso!')
