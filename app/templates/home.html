@@ -40,50 +40,18 @@
         </div>
     </header>
 
-    <!-- Carrossel Bootstrap -->
-    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{% static 'images/Logo.png' %}" class="d-block w-100" alt="Primeiro Slide" style="height:400px;object-fit:cover;">
-                <div class="carousel-caption d-none d-md-block">
-                    <!-- <h5>Primeiro Slide</h5>
-                    <p>Descrição do primeiro slide.</p> -->
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'images/design.jpg' %}" class="d-block w-100" alt="Segundo Slide" style="height:400px;object-fit:cover;">
-                <div class="carousel-caption d-none d-md-block">
-                    <!-- <h5>Segundo Slide</h5>
-                    <p>Descrição do segundo slide.</p> -->
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'images/port2.webp' %}" class="d-block w-100" alt="Terceiro Slide" style="height:400px;object-fit:cover;">
-                <div class="carousel-caption d-none d-md-block">
-                    <!-- <h5>Terceiro Slide</h5>
-                    <p>Descrição do terceiro slide.</p> -->
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Próximo</span>
-        </button>
-    </div>
+    <!-- Video Bootstrap -->
+  
+                <video class="d-block w-100" style="height:400px;object-fit:cover;" autoplay muted loop playsinline>
+                    <source src="{% static 'videos/video.mp4' %}" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+          
 
     <!-- Hero Section -->
     <section class="bg-light text-center py-5">
         <div class="container">
-            <h1 class="display-4 fw-bold">Intech Jr.</h1>
+            <h1 class="display-4 fw-bold">Sobre a Intech</h1>
             <p class="lead">A Empresa Júnior do curso de Ciência da Computação do IFSULDEMINAS Campus Muzambinho é uma associação gerida por estudantes que oferece soluções tecnológicas inovadoras, aplicando na prática o conhecimento adquirido durante a graduação.</p>
             <a href="#contact" class="btn btn-primary btn-lg mt-3">Fale com a gente</a>
         </div>
