@@ -1,47 +1,56 @@
+/* =========================
+   Variáveis de Cores
+   ========================= */
 :root {
-    --primary-color: #007bff;
-    --btn-color: #0056b3;
-    --btn-hover: #004494;
+    --primary-color: #007bff;      /* Azul principal */
+    --secondary-color: #c623d4;    /* Roxo para navegação */
+    --btn-color: #0056b3;          /* Azul escuro para botões */
+    --btn-hover: #004494;          /* Azul ainda mais escuro para hover */
+    --bg-light: #f9f9f9;           /* Fundo claro */
+    --text-dark: #333333;          /* Texto padrão */
+    --footer-bg: #002147;          /* Fundo do rodapé */
 }
 
-/* Reset básico */
+/* =========================
+   Reset e Base
+   ========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos base */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
+    background-color: var(--bg-light);
     overflow-x: hidden;
+    color: var(--text-dark);
 }
 
-/* Cabeçalho */
+/* =========================
+   Cabeçalho e Navegação
+   ========================= */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 20px 5vw;
-    background-color: white;
+    background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* Logo */
 .logo .img_logo {
     height: 50px;
-    width: 50px; /* largura definida para formato circular */
+    width: 50px;
     object-fit: cover;
-    display: block; /* garante que o elemento seja renderizado corretamente */
+    display: block;
     border-radius: 50%;
 }
 
-/* Lista de navegação */
 .navigation__list {
     list-style: none;
     display: flex;
@@ -49,63 +58,73 @@ body {
     align-items: center;
 }
 
-/* Links de navegação */
 .navigation__item a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-dark);
     font-weight: 500;
     transition: color 0.3s ease;
+    outline: none;
 }
-
-.navigation__item a:hover {
+.navigation__item a:hover,
+.navigation__item a:focus {
     color: var(--primary-color);
 }
 
-/* Botão customizado */
+/* =========================
+   Botões
+   ========================= */
 .btn--cta {
     background-color: var(--btn-color);
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
-    color: white;
+    color: #fff;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s;
 }
-
-.btn--cta:hover {
+.btn--cta:hover,
+.btn--cta:focus {
     background-color: var(--btn-hover);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 }
 
-/* === Bootstrap override para botão primário === */
+/* Bootstrap override para botão primário */
 .btn-primary {
     background-color: var(--btn-color) !important;
     border-color: var(--btn-color) !important;
+    color: #fff !important;
 }
-
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
     background-color: var(--btn-hover) !important;
     border-color: var(--btn-hover) !important;
+    color: #fff !important;
 }
 
-/* Links com .nav-link */
+/* =========================
+   Links de Navegação
+   ========================= */
 .nav-link {
-    color: #333 !important;
+    color: var(--text-dark) !important;
     font-weight: 500;
     transition: color 0.3s ease;
+    outline: none;
+}
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--secondary-color) !important;
 }
 
-.nav-link:hover {
-    color: var(--primary-color) !important;
-}
-
-/* Estilos para os cards */
+/* =========================
+   Cards
+   ========================= */
 .card {
     transition: transform 0.2s, box-shadow 0.2s;
     border-radius: 16px;
     border: none;
+    background: #fff;
 }
 .card:hover {
     transform: translateY(-6px) scale(1.03);
@@ -121,6 +140,9 @@ body {
     margin-bottom: 8px;
 }
 
+/* =========================
+   Blockquote
+   ========================= */
 blockquote {
     font-size: 1.1rem;
     color: #444;
@@ -136,19 +158,58 @@ footer.blockquote-footer {
     font-size: 0.95em;
 }
 
+/* =========================
+   Rodapé
+   ========================= */
 footer.bg-dark {
     border-top: 4px solid var(--primary-color);
+    background-color: var(--footer-bg) !important;
+    color: #fff !important;
 }
-
-footer.bg-dark a:hover {
+footer.bg-dark a:hover,
+footer.bg-dark a:focus {
     color: var(--primary-color) !important;
     text-decoration: underline;
 }
 
-/* Botão flutuante do WhatsApp */
+/* =========================
+   Botão flutuante WhatsApp
+   ========================= */
 .btn-success.rounded-circle {
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   Foco visível para acessibilidade
+   ========================= */
+a:focus, button:focus, .form-control:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* =========================
+   Animação sutil em hover de botões
+   ========================= */
+.btn {
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.btn:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+/* =========================
+   Responsividade básica
+   ========================= */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 10px 2vw;
+    }
+    .navigation__list {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
