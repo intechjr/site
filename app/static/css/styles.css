@@ -213,3 +213,54 @@ a:focus, button:focus, .form-control:focus {
         gap: 10px;
     }
 }
+
+/* =========================
+   Tema escuro (dark-theme)
+   ========================= */
+body.dark-theme {
+    background-color: #181a1b;
+    color: #f1f1f1;
+}
+body.dark-theme .bg-light,
+body.dark-theme section.bg-light,
+body.dark-theme .card,
+body.dark-theme .navbar,
+body.dark-theme .container,
+body.dark-theme .form-control {
+    background-color: #23272b !important;
+    color: #f1f1f1 !important;
+    border-color: #343a40 !important;
+}
+body.dark-theme .navbar,
+body.dark-theme nav.navbar {
+    background-color: #23272b !important;
+}
+body.dark-theme .card-title,
+body.dark-theme .card-text,
+body.dark-theme .form-control,
+body.dark-theme .nav-link,
+body.dark-theme .navbar-brand {
+    color: #f1f1f1 !important;
+}
+body.dark-theme .btn,
+body.dark-theme .btn-primary,
+body.dark-theme .btn--cta {
+    background-color: #343a40 !important;
+    border-color: #343a40 !important;
+    color: #fff !important;
+}
+body.dark-theme .btn-success {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+}
+body.dark-theme footer.bg-dark {
+    background-color: #181a1b !important;
+    color: #f1f1f1 !important;
+    border-top: 4px solid var(--primary-color);
+}
+body.dark-theme a {
+    color: #90caf9;
+}
+body.dark-theme a:hover {
+    color: #64b5f6;
+}
