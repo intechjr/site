@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Intech Jr.{% endblock %}</title>
+    <title>{% block title %}Intech Jr{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Empresa Júnior de Ciência da Computação do IFSULDEMINAS Campus Muzambinho. Soluções tecnológicas inovadoras.">
     <meta name="author" content="Intech Jr.">
@@ -20,8 +20,7 @@
         <div class="container px-4">
             <a class="navbar-brand logo d-flex align-items-center" href="{% url 'home' %}" aria-label="Página inicial">
                 <img src="{% static 'images/Logo.png' %}" alt="Logo da Intech Jr." class="img_logo">
-                <span class="ms-2 fw-bold d-inline d-lg-none intech-mobile-label" style="font-size:1.2rem;">Intech Jr</span>
-                <span class="intech-dark-label ms-2 fw-bold d-none d-lg-inline" style="font-size:1.2rem;">Intech Jr</span>
+                <span class="intech-dark-label ms-2 fw-bold" style="font-size:1.2rem;">Intech Jr</span>
             </a>
             <!-- Botão hamburguer para menu mobile (navbar-toggler) -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Abrir menu de navegação">
