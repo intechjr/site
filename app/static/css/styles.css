@@ -227,13 +227,13 @@ body.dark-theme .card,
 body.dark-theme .navbar,
 body.dark-theme .container,
 body.dark-theme .form-control {
-    background-color: #23272b !important;
+    background-color: #181a1b !important;
     color: #f1f1f1 !important;
     border-color: #343a40 !important;
 }
 body.dark-theme .navbar,
 body.dark-theme nav.navbar {
-    background-color: #23272b !important;
+    background-color: #181a1b !important;
 }
 body.dark-theme .card-title,
 body.dark-theme .card-text,
@@ -254,13 +254,31 @@ body.dark-theme .btn-success {
     border-color: #198754 !important;
 }
 body.dark-theme footer.bg-dark {
-    background-color: #181a1b !important;
+    background-color: #23272b !important; /* rodapé mais claro */
     color: #f1f1f1 !important;
-    border-top: 4px solid var(--primary-color);
+    border-top: 4px solid #23272b !important; /* linha igual ao fundo do rodapé */
 }
 body.dark-theme a {
     color: #90caf9;
 }
 body.dark-theme a:hover {
     color: #64b5f6;
+}
+
+/* =========================
+   Placeholder no tema escuro
+   ========================= */
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder,
+body.dark-theme .form-control::placeholder {
+    color: #b0b0b0 !important;
+    opacity: 1 !important;
+    transition: color 0.2s;
+}
+
+/* =========================
+   Hamburguer visível no dark mode
+   ========================= */
+body.dark-theme .navbar-toggler {
+    filter: invert(1) grayscale(1) brightness(1.8);
 }
