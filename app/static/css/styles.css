@@ -282,3 +282,19 @@ body.dark-theme .form-control::placeholder {
 body.dark-theme .navbar-toggler {
     filter: invert(1) grayscale(1) brightness(1.8);
 }
+
+/* =========================
+   Label visível no dark mode
+   ========================= */
+.intech-dark-label {
+    display: none !important;
+}
+body.dark-theme .intech-dark-label {
+    display: inline !important;
+}
+.intech-mobile-label {
+    display: inline !important;
+}
+body.dark-theme .intech-mobile-label {
+    display: none !important;
+}
