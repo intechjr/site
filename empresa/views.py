@@ -7,6 +7,12 @@ from .models import *
 def home(request):
     # Busca a configuração da empresa (assume-se que só haverá uma empresa configurada)
     empresa = Empresa.objects.first()
+    if not empresa:
+        messages.error(request, "Nenhuma empresa foi configurada ainda.")
+        return render(request, 'error.html', {'error': 'Empresa não configurada'}, status=500)
+    elif not empresa.nome:
+        messages.warning(request, "O nome da empresa não foi definido.")
+        return render(request, 'error.html', {'error': 'Nome da Empresa não configurado'}, status=500)
 
     # Busca todas as abas relacionadas à empresa
     abas = Aba.objects.filter(empresa=empresa)
