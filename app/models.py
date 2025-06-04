@@ -1,9 +1,10 @@
 from django.db import models
 
+
 class Empresa(models.Model):
     nome = models.CharField(max_length=100, verbose_name='Nome', help_text='Nome da empresa')
-    logo = models.ImageField(upload_to='empresa/static/images/', null=True, blank=True, verbose_name='Logo')  # Armazena imagens no diretório 'images/'
-    bg_logo = models.FileField(upload_to='empresa/static/media/', null=True, blank=True, verbose_name='Imagem ou Vídeo de Fundo', help_text='Aceita imagens ou vídeos')  # Alterado para aceitar arquivos de mídia
+    logo = models.ImageField(upload_to='app/static/images/', null=True, blank=True, verbose_name='Logo')
+    bg_logo = models.FileField(upload_to='app/static/media/', null=True, blank=True, verbose_name='Imagem ou Vídeo de Fundo', help_text='Aceita imagens ou vídeos')  # Alterado para aceitar arquivos de mídia
     sobre = models.CharField(max_length=255, verbose_name='Sobre', help_text='Texto que descreve a empresa')
     contato = models.BooleanField(default=False, verbose_name='Contato', help_text='Ativar formulário de contato?')
     email = models.EmailField(max_length=100, verbose_name='Email', help_text='Email para contato')
@@ -30,7 +31,7 @@ class Aba(models.Model):
 class AbaItem(models.Model):
     nome = models.CharField(max_length=100, verbose_name='Nome', help_text='Nome do item da aba')
     descricao = models.CharField(max_length=255, verbose_name='Descrição', help_text='Descrição do item da aba')
-    imagem = models.ImageField(upload_to='empresa/static/images/', verbose_name='Imagem', help_text='Imagem do Item')  # Armazena imagens no diretório 'itens/'
+    imagem = models.ImageField(upload_to='app/static/images/', verbose_name='Imagem', help_text='Imagem do Item')
     aba = models.ForeignKey(Aba, on_delete=models.PROTECT, verbose_name='Aba', related_name='itens')
 
     class Meta:

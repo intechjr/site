@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.views.generic import *
 from .models import *
 
+
 def home(request):
     # Busca a configuração da empresa (assume-se que só haverá uma empresa configurada)
     empresa = Empresa.objects.first()
